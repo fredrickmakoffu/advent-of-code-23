@@ -61,7 +61,7 @@ fn part_2(input: &str) -> u32 {
     sum
 }
 
-fn get_number_from_string(word: &str) -> String {
+fn part_1(word: &str) -> String {
     let mut number: Vec<char> = Vec::new();
 
     for c in word.chars() {
@@ -77,19 +77,15 @@ fn get_number_from_string(word: &str) -> String {
         .collect();
 }
 
-fn commands(args: Vec<String>) -> String {
-    return args[1].to_string();
-}
-
 pub fn handle(input: Vec<String>, args: Vec<String>) {
-    let command: String = commands(args);
+    let command: String = args[1].to_string();
     let mut sum = 0;
     for line in input {
         let number: u32;
         if command == "part2" {
             number = part_2(&line);
         } else {
-            number = get_number_from_string(&line).parse::<u32>().unwrap();
+            number = part_1(&line).parse::<u32>().unwrap();
         }
 
         sum = sum + number;
