@@ -1,7 +1,5 @@
 #![allow(dead_code)]
-use std::collections::HashMap;
-
-fn commands(args: Vec<String>) -> String {
+use std::collections::HashMap;fn commands(args: Vec<String>) -> String {
     return args[1].to_string();
 }
 
@@ -70,7 +68,7 @@ fn part_2(input: Vec<String>) {
 }
 
 pub fn handle(input: Vec<String>, args: Vec<String>) {
-    let command: String = commands(args);
+    let command: String = args[1].to_string();
 
     if command == "part2" {
         part_2(input);

@@ -1,10 +1,11 @@
 mod days {
     pub mod one;
     pub mod two;
+    pub mod three;
 }
 
 pub mod helpers;
-use days::{one, two};
+use days::{one, two, three};
 
 fn main() {
     // manage arguments
@@ -19,6 +20,7 @@ fn main() {
     match question.as_str() {
         "1" => one::handle(input, child_args),
         "2" => two::handle(input, child_args),
+        "3" => three::handle(input, child_args),
         _ => println!("Question not found"),
     }
 }
